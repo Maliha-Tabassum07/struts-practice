@@ -6,11 +6,13 @@
         <form-bean name="productForm" type="com.training.java.struts.ProductForm"/>
     </form-beans>
     <action-mappings>
-            <action path="/saveProduct" type="com.training.java.struts.SaveProductAction" name="productForm" scope="request">
-            <forward name="success" path="/WEB-INF/views/Success.jsp"/>
+            <action path="/saveProduct" type="com.training.java.struts.SaveProductAction" name="productForm" scope="request" validate="true" input="/WEB-INF/views/ProductForm.jsp">
+            <forward name="success" path="/WEB-INF/views/Success.jsp" />
         </action>
             <action path="/targetPage" type="com.training.java.struts.TargetPageAction" >
     		<forward name="success" path="/WEB-INF/views/ProductForm.jsp" />
 		</action>
     </action-mappings>
+    	<message-resources
+		parameter="com.training.java.struts.ApplicationResources" />
 </struts-config>
